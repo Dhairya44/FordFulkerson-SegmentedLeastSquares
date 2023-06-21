@@ -1,22 +1,44 @@
+/**
+ * @file ford_fulkerson.cpp
+ */
+ /**
+*   @authors Manasa SK - 2020A7PS0223H  
+*   @authors Ayush Agrawal - 2020A7PS0160H
+*   @authors Vedant Mathur - 2020A7PS2047H
+*   @authors Dhairya Agrawal - 2020A7PS0130H
+ */
+//  Ford Fulkerson Algorithm brief
+/**
+  *  @brief The Ford Fulkerson Algorithm is used to find the maximum flow in a flow network.   
+*/
 #include<bits/stdc++.h>
 using namespace std;
-map<int, char> mp;
+
+double algoTime;
 
 void print(vector<vector<pair<int, pair<int, int>>>> &G){
+    /**
+        * @brief This function prints the graph G
+        * @param vector<vector<pair<int, pair<int, int>>>> G
+    */
     for(int i = 0; i<G.size(); i++){
-        cout << mp[i] << " -> ";
+        cout << i << " -> ";
         for(int j = 0; j<G[i].size(); j++){
-            cout << mp[G[i][j].first] << " " << G[i][j].second.first << " " << G[i][j].second.second << ", ";
+            cout << G[i][j].first << " " << G[i][j].second.first << " " << G[i][j].second.second << ", ";
         }
         cout << endl;
     }
 }
 
 void printResidual(vector<vector<pair<int, pair<int, bool>>>> &rG){
+    /**
+        * @brief This function prints the residual graph rG
+        * @param vector<vector<pair<int, pair<int, bool>>>> rG
+    */
     for(int i = 0; i<rG.size(); i++){
-        cout << mp[i] << " -> ";
+        cout << i << " -> ";
         for(int j = 0; j<rG[i].size(); j++){
-            cout << mp[rG[i][j].first] << " " << rG[i][j].second.first << " " << rG[i][j].second.second << ", ";
+            cout << rG[i][j].first << " " << rG[i][j].second.first << " " << rG[i][j].second.second << ", ";
         }
         cout << endl;
     }
@@ -24,6 +46,11 @@ void printResidual(vector<vector<pair<int, pair<int, bool>>>> &rG){
 
 vector<int> parent;
 vector<vector<pair<int, pair<int, bool>>>> generateResidual(vector<vector<pair<int, pair<int, int>>>> &G){
+    /**
+     * @brief This function generates the residual graph from the graph G
+     * @param vector<vector<pair<int, pair<int, int>>>> G
+     */
+    
     vector<vector<pair<int, pair<int, bool>>>> rG(G.size());
     for(int i = 0; i<G.size(); i++){
         for(int j = 0; j<G[i].size(); j++){
@@ -40,6 +67,13 @@ vector<vector<pair<int, pair<int, bool>>>> generateResidual(vector<vector<pair<i
 }
 
 bool bfs(vector<vector<pair<int, pair<int, bool>>>> &rG, int s, int t){
+    /**
+     * @brief This function performs a bfs on the residual graph rG
+     * @param vector<vector<pair<int, pair<int, bool>>>> rG
+     * @param int s
+     * @param int t
+     */
+
     parent.assign(rG.size(), -1);
     vector<bool> visited(rG.size(), false);
     queue<int> q;
@@ -65,6 +99,14 @@ bool bfs(vector<vector<pair<int, pair<int, bool>>>> &rG, int s, int t){
 }
 
 void decrease(vector<vector<pair<int, pair<int, int>>>> &G, int u, int v, int bottleneck){
+    /**
+     * @brief This function decreases the flow in the graph G
+     * @param vector<vector<pair<int, pair<int, int>>>> G
+     * @param int u
+     * @param int v
+     * @param int bottleneck
+     */
+
     for(int i = 0; i<G[u].size(); i++){
         if(G[u][i].first == v){
             G[u][i].second.first -= bottleneck;
@@ -74,6 +116,14 @@ void decrease(vector<vector<pair<int, pair<int, int>>>> &G, int u, int v, int bo
 }
 
 void increase(vector<vector<pair<int, pair<int, int>>>> &G, int u, int v, int bottleneck){
+    /**
+     * @brief This function increases the flow in the graph G
+     * @param vector<vector<pair<int, pair<int, int>>>> G
+     * @param int u
+     * @param int v
+     * @param int bottleneck
+     */
+
     for(int i = 0; i<G[u].size(); i++){
         if(G[u][i].first == v){
             G[u][i].second.first += bottleneck;
@@ -83,6 +133,13 @@ void increase(vector<vector<pair<int, pair<int, int>>>> &G, int u, int v, int bo
 }
 
 int ford_fulkerson(vector<vector<pair<int, pair<int, int>>>> &G, int s, int t){
+    /**
+     * @brief This function implements the Ford Fulkerson Algorithm
+     * @param vector<vector<pair<int, pair<int, int>>>> G
+     * @param int s
+     * @param int t
+     */
+
     int n = G.size();
     vector<vector<pair<int, pair<int, bool>>>> rG = generateResidual(G);
     while(true){
@@ -125,25 +182,71 @@ int ford_fulkerson(vector<vector<pair<int, pair<int, int>>>> &G, int s, int t){
     return max_flow;
 }
 
-int main(){
-    freopen("input.txt", "r", stdin);
-    mp[0] = 's';
-    mp[1] = 'a';
-    mp[2] = 'b';
-    mp[3] = 'c';
-    mp[4] = 'd';
-    mp[5] = 't';
-    int n, m;
-    cin >> n >> m;
+void bipartite()
+{
+    /**
+     * @brief This function implements the Ford Fulkerson Algorithm on a bipartite graph
+     */
+    freopen("input1(bpm).txt", "r", stdin);
+    int n, m,k;
+    cin >> n >> m >> k; 
+    vector<vector<pair<int, pair<int, int>>>> G(n+ m + 2);
+    for (int i = 0; i < k; i++)
+    {
+        int u, v;
+        cin >> u >> v;
+        G[u].push_back({n+v, {0, 1}});
+    }
+    for(int i = 0; i<n; i++)
+        G[0].push_back({i+1, {0, 1}});
+    for(int i = 0; i<m; i++)
+        G[n+i+1].push_back({n+m+1, {0, 1}});
+    
+    auto start_time = std::chrono::high_resolution_clock::now();
+    cout << ford_fulkerson(G, 0, n+m+1) << endl;
+    auto end_time = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_time = end_time - start_time;
+    algoTime = elapsed_time.count();
+    // freopen("output1.txt", "a", stdout);
+    // cout<<n<<", "<<algoTime<<endl;
+}
+
+void normal()
+{
+    /**
+     * @brief This function implements the Ford Fulkerson Algorithm on a normal graph
+     */
+    freopen("input1.txt", "r", stdin);
+    int n, m,s,t;
+    cin >> n >> m>>s>>t;
     vector<vector<pair<int, pair<int, int>>>> G(n);
-    for(int i = 0; i < m; i++){
+    for (int i = 0; i < m; i++)
+    {
         int u, v, w;
         cin >> u >> v >> w;
         G[u].push_back({v, {0, w}});
     }
-    int s, t;
-    cin >> s >> t;
     // print(G);
+    auto start_time = std::chrono::high_resolution_clock::now();
     cout << ford_fulkerson(G, s, t) << endl;
+    auto end_time = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed_time = end_time - start_time;
+    algoTime = elapsed_time.count();
+    freopen("output1.txt", "a", stdout);
+    cout<<n<<", "<<algoTime<<endl;
+}
+
+int main()
+{
+    /** 
+        * @brief Main function
+        * First it takes the input from the file input.txt
+        * Then it calls the ford_fulkerson function
+        * Then it prints the maximum flow
+        * @returns 0 on exit
+
+    */
+    // normal();
+    bipartite();
     return 0;
 }

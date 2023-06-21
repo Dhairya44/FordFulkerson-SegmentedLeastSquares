@@ -1,0 +1,119 @@
+\hypertarget{segmented__least__squares_8cpp}{}\doxysection{segmented\+\_\+least\+\_\+squares.\+cpp File Reference}
+\label{segmented__least__squares_8cpp}\index{segmented\_least\_squares.cpp@{segmented\_least\_squares.cpp}}
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_points}{Points}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+pair$<$ double, double $>$ \mbox{\hyperlink{segmented__least__squares_8cpp_a11686bc0e1a2a252ac5f0c7c249b17ec}{calculate\+\_\+cost}} (vector$<$ \mbox{\hyperlink{struct_points}{Points}} $>$ \&points, int i, int j, double c, int z)
+\item 
+pair$<$ vector$<$ pair$<$ int, int $>$ $>$, double $>$ \mbox{\hyperlink{segmented__least__squares_8cpp_a940d8204412878b2efe32f833b17c126}{segmented\+\_\+least\+\_\+squares}} (vector$<$ \mbox{\hyperlink{struct_points}{Points}} $>$ \&points, double c)
+\item 
+pair$<$ int, int $>$ \mbox{\hyperlink{segmented__least__squares_8cpp_acc45e3d4b55da46be0517e805bec957c}{partitions\+\_\+calculate\+\_\+count}} (vector$<$ pair$<$ int, int $>$ $>$ \&segments, int n)
+\item 
+void \mbox{\hyperlink{segmented__least__squares_8cpp_a0071c571af1b09ecd708dd258fb86b54}{print\+Results}} (pair$<$ vector$<$ pair$<$ int, int $>$ $>$, double $>$ res, vector$<$ \mbox{\hyperlink{struct_points}{Points}} $>$ \&points, int n)
+\item 
+void \mbox{\hyperlink{segmented__least__squares_8cpp_a51c27189e9612525922dcce88e4a39d8}{write\+To\+File}} (pair$<$ vector$<$ pair$<$ int, int $>$ $>$, double $>$ res, vector$<$ \mbox{\hyperlink{struct_points}{Points}} $>$ \&points, int n)
+\item 
+int \mbox{\hyperlink{segmented__least__squares_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Authors}
+Manasa SK -\/ 2020A7\+PS0223H 
+
+Ayush Agrawal -\/ 2020A7\+PS0160H 
+
+Vedant Mathur -\/ 2020A7\+PS2047H 
+
+Dhairya Agrawal -\/ 2020A7\+PS0130H 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{segmented__least__squares_8cpp_a11686bc0e1a2a252ac5f0c7c249b17ec}\label{segmented__least__squares_8cpp_a11686bc0e1a2a252ac5f0c7c249b17ec}} 
+\index{segmented\_least\_squares.cpp@{segmented\_least\_squares.cpp}!calculate\_cost@{calculate\_cost}}
+\index{calculate\_cost@{calculate\_cost}!segmented\_least\_squares.cpp@{segmented\_least\_squares.cpp}}
+\doxysubsubsection{\texorpdfstring{calculate\_cost()}{calculate\_cost()}}
+{\footnotesize\ttfamily pair$<$ double, double $>$ calculate\+\_\+cost (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{struct_points}{Points}} $>$ \&}]{points,  }\item[{int}]{i,  }\item[{int}]{j,  }\item[{double}]{c,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+Calculates the cost of a line segment 
+\begin{DoxyParams}{Parameters}
+{\em points} & The vector of points \\
+\hline
+{\em i} & The starting index of the line segment \\
+\hline
+{\em j} & The ending index of the line segment \\
+\hline
+{\em c} & The constant c \\
+\hline
+{\em z} & The number of points\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{segmented__least__squares_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{segmented__least__squares_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{segmented\_least\_squares.cpp@{segmented\_least\_squares.cpp}!main@{main}}
+\index{main@{main}!segmented\_least\_squares.cpp@{segmented\_least\_squares.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Main function Takes input from input2.\+txt Calls the segmented\+\_\+least\+\_\+squares function Calls the print\+Results function Calls the write\+To\+File function\mbox{\Hypertarget{segmented__least__squares_8cpp_acc45e3d4b55da46be0517e805bec957c}\label{segmented__least__squares_8cpp_acc45e3d4b55da46be0517e805bec957c}} 
+\index{segmented\_least\_squares.cpp@{segmented\_least\_squares.cpp}!partitions\_calculate\_count@{partitions\_calculate\_count}}
+\index{partitions\_calculate\_count@{partitions\_calculate\_count}!segmented\_least\_squares.cpp@{segmented\_least\_squares.cpp}}
+\doxysubsubsection{\texorpdfstring{partitions\_calculate\_count()}{partitions\_calculate\_count()}}
+{\footnotesize\ttfamily pair$<$ int, int $>$ partitions\+\_\+calculate\+\_\+count (\begin{DoxyParamCaption}\item[{vector$<$ pair$<$ int, int $>$ $>$ \&}]{segments,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+Calculates the number of partitions 
+\begin{DoxyParams}{Parameters}
+{\em segments} & The vector of segments \\
+\hline
+{\em n} & The number of points\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{segmented__least__squares_8cpp_a0071c571af1b09ecd708dd258fb86b54}\label{segmented__least__squares_8cpp_a0071c571af1b09ecd708dd258fb86b54}} 
+\index{segmented\_least\_squares.cpp@{segmented\_least\_squares.cpp}!printResults@{printResults}}
+\index{printResults@{printResults}!segmented\_least\_squares.cpp@{segmented\_least\_squares.cpp}}
+\doxysubsubsection{\texorpdfstring{printResults()}{printResults()}}
+{\footnotesize\ttfamily void print\+Results (\begin{DoxyParamCaption}\item[{pair$<$ vector$<$ pair$<$ int, int $>$ $>$, double $>$}]{res,  }\item[{vector$<$ \mbox{\hyperlink{struct_points}{Points}} $>$ \&}]{points,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+Prints the results 
+\begin{DoxyParams}{Parameters}
+{\em res} & The vector of segments \\
+\hline
+{\em points} & The vector of points \\
+\hline
+{\em n} & The number of points\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{segmented__least__squares_8cpp_a940d8204412878b2efe32f833b17c126}\label{segmented__least__squares_8cpp_a940d8204412878b2efe32f833b17c126}} 
+\index{segmented\_least\_squares.cpp@{segmented\_least\_squares.cpp}!segmented\_least\_squares@{segmented\_least\_squares}}
+\index{segmented\_least\_squares@{segmented\_least\_squares}!segmented\_least\_squares.cpp@{segmented\_least\_squares.cpp}}
+\doxysubsubsection{\texorpdfstring{segmented\_least\_squares()}{segmented\_least\_squares()}}
+{\footnotesize\ttfamily pair$<$ vector$<$ pair$<$ int, int $>$ $>$, double $>$ segmented\+\_\+least\+\_\+squares (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{struct_points}{Points}} $>$ \&}]{points,  }\item[{double}]{c }\end{DoxyParamCaption})}
+
+Calculates the optimal line segments 
+\begin{DoxyParams}{Parameters}
+{\em points} & The vector of points \\
+\hline
+{\em c} & The constant c\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{segmented__least__squares_8cpp_a51c27189e9612525922dcce88e4a39d8}\label{segmented__least__squares_8cpp_a51c27189e9612525922dcce88e4a39d8}} 
+\index{segmented\_least\_squares.cpp@{segmented\_least\_squares.cpp}!writeToFile@{writeToFile}}
+\index{writeToFile@{writeToFile}!segmented\_least\_squares.cpp@{segmented\_least\_squares.cpp}}
+\doxysubsubsection{\texorpdfstring{writeToFile()}{writeToFile()}}
+{\footnotesize\ttfamily void write\+To\+File (\begin{DoxyParamCaption}\item[{pair$<$ vector$<$ pair$<$ int, int $>$ $>$, double $>$}]{res,  }\item[{vector$<$ \mbox{\hyperlink{struct_points}{Points}} $>$ \&}]{points,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+Writes the results to a file 
+\begin{DoxyParams}{Parameters}
+{\em res} & The vector of segments \\
+\hline
+{\em points} & The vector of points \\
+\hline
+{\em n} & The number of points\\
+\hline
+\end{DoxyParams}

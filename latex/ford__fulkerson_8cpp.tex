@@ -1,0 +1,156 @@
+\hypertarget{ford__fulkerson_8cpp}{}\doxysection{ford\+\_\+fulkerson.\+cpp File Reference}
+\label{ford__fulkerson_8cpp}\index{ford\_fulkerson.cpp@{ford\_fulkerson.cpp}}
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ford__fulkerson_8cpp_aecbd9a6cd417c3993ef19fbbe4e35708}{print}} (vector$<$ vector$<$ pair$<$ int, pair$<$ int, int $>$ $>$ $>$ $>$ \&G)
+\item 
+void \mbox{\hyperlink{ford__fulkerson_8cpp_a43b9ac32b4f3058ace86c94f7225e7bc}{print\+Residual}} (vector$<$ vector$<$ pair$<$ int, pair$<$ int, bool $>$ $>$ $>$ $>$ \&rG)
+\item 
+vector$<$ vector$<$ pair$<$ int, pair$<$ int, bool $>$ $>$ $>$ $>$ \mbox{\hyperlink{ford__fulkerson_8cpp_a697a2e27997ad65c310424089eeade2e}{generate\+Residual}} (vector$<$ vector$<$ pair$<$ int, pair$<$ int, int $>$ $>$ $>$ $>$ \&G)
+\item 
+bool \mbox{\hyperlink{ford__fulkerson_8cpp_a57022cfbd6657beee79badbf30e95ddc}{bfs}} (vector$<$ vector$<$ pair$<$ int, pair$<$ int, bool $>$ $>$ $>$ $>$ \&rG, int s, int t)
+\item 
+void \mbox{\hyperlink{ford__fulkerson_8cpp_a510e40549245728b16f1e693e39c0ddf}{decrease}} (vector$<$ vector$<$ pair$<$ int, pair$<$ int, int $>$ $>$ $>$ $>$ \&G, int u, int v, int bottleneck)
+\item 
+void \mbox{\hyperlink{ford__fulkerson_8cpp_a02bbc352243e582aa492abcf0954b3d2}{increase}} (vector$<$ vector$<$ pair$<$ int, pair$<$ int, int $>$ $>$ $>$ $>$ \&G, int u, int v, int bottleneck)
+\item 
+int \mbox{\hyperlink{ford__fulkerson_8cpp_a598e6f1b01df3cb135bb12d2da1d0f26}{ford\+\_\+fulkerson}} (vector$<$ vector$<$ pair$<$ int, pair$<$ int, int $>$ $>$ $>$ $>$ \&G, int s, int t)
+\item 
+void \mbox{\hyperlink{ford__fulkerson_8cpp_a8f3854779b6a2bdbbaee5edb749cbac4}{bipartite}} ()
+\item 
+void \mbox{\hyperlink{ford__fulkerson_8cpp_aac3789ad6796dca42d9cadcd7de21836}{normal}} ()
+\item 
+int \mbox{\hyperlink{ford__fulkerson_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ford__fulkerson_8cpp_ad6371d5199e4c922989d11f6be6e4fda}\label{ford__fulkerson_8cpp_ad6371d5199e4c922989d11f6be6e4fda}} 
+double {\bfseries algo\+Time}
+\item 
+\mbox{\Hypertarget{ford__fulkerson_8cpp_a92d810e9dac1a24b3b01862bb8f66385}\label{ford__fulkerson_8cpp_a92d810e9dac1a24b3b01862bb8f66385}} 
+vector$<$ int $>$ {\bfseries parent}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ford__fulkerson_8cpp_a57022cfbd6657beee79badbf30e95ddc}\label{ford__fulkerson_8cpp_a57022cfbd6657beee79badbf30e95ddc}} 
+\index{ford\_fulkerson.cpp@{ford\_fulkerson.cpp}!bfs@{bfs}}
+\index{bfs@{bfs}!ford\_fulkerson.cpp@{ford\_fulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{bfs()}{bfs()}}
+{\footnotesize\ttfamily bool bfs (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ pair$<$ int, pair$<$ int, bool $>$ $>$ $>$ $>$ \&}]{rG,  }\item[{int}]{s,  }\item[{int}]{t }\end{DoxyParamCaption})}
+
+This function performs a bfs on the residual graph rG 
+\begin{DoxyParams}{Parameters}
+{\em vector$<$vector$<$pair$<$int,pair$<$int,bool$>$$>$$>$$>$} & rG \\
+\hline
+{\em int} & s \\
+\hline
+{\em int} & t\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ford__fulkerson_8cpp_a8f3854779b6a2bdbbaee5edb749cbac4}\label{ford__fulkerson_8cpp_a8f3854779b6a2bdbbaee5edb749cbac4}} 
+\index{ford\_fulkerson.cpp@{ford\_fulkerson.cpp}!bipartite@{bipartite}}
+\index{bipartite@{bipartite}!ford\_fulkerson.cpp@{ford\_fulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{bipartite()}{bipartite()}}
+{\footnotesize\ttfamily void bipartite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function implements the Ford Fulkerson Algorithm on a bipartite graph\mbox{\Hypertarget{ford__fulkerson_8cpp_a510e40549245728b16f1e693e39c0ddf}\label{ford__fulkerson_8cpp_a510e40549245728b16f1e693e39c0ddf}} 
+\index{ford\_fulkerson.cpp@{ford\_fulkerson.cpp}!decrease@{decrease}}
+\index{decrease@{decrease}!ford\_fulkerson.cpp@{ford\_fulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{decrease()}{decrease()}}
+{\footnotesize\ttfamily void decrease (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ pair$<$ int, pair$<$ int, int $>$ $>$ $>$ $>$ \&}]{G,  }\item[{int}]{u,  }\item[{int}]{v,  }\item[{int}]{bottleneck }\end{DoxyParamCaption})}
+
+This function decreases the flow in the graph G 
+\begin{DoxyParams}{Parameters}
+{\em vector$<$vector$<$pair$<$int,pair$<$int,int$>$$>$$>$$>$} & G \\
+\hline
+{\em int} & u \\
+\hline
+{\em int} & v \\
+\hline
+{\em int} & bottleneck\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ford__fulkerson_8cpp_a598e6f1b01df3cb135bb12d2da1d0f26}\label{ford__fulkerson_8cpp_a598e6f1b01df3cb135bb12d2da1d0f26}} 
+\index{ford\_fulkerson.cpp@{ford\_fulkerson.cpp}!ford\_fulkerson@{ford\_fulkerson}}
+\index{ford\_fulkerson@{ford\_fulkerson}!ford\_fulkerson.cpp@{ford\_fulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{ford\_fulkerson()}{ford\_fulkerson()}}
+{\footnotesize\ttfamily int ford\+\_\+fulkerson (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ pair$<$ int, pair$<$ int, int $>$ $>$ $>$ $>$ \&}]{G,  }\item[{int}]{s,  }\item[{int}]{t }\end{DoxyParamCaption})}
+
+This function implements the Ford Fulkerson Algorithm 
+\begin{DoxyParams}{Parameters}
+{\em vector$<$vector$<$pair$<$int,pair$<$int,int$>$$>$$>$$>$} & G \\
+\hline
+{\em int} & s \\
+\hline
+{\em int} & t\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ford__fulkerson_8cpp_a697a2e27997ad65c310424089eeade2e}\label{ford__fulkerson_8cpp_a697a2e27997ad65c310424089eeade2e}} 
+\index{ford\_fulkerson.cpp@{ford\_fulkerson.cpp}!generateResidual@{generateResidual}}
+\index{generateResidual@{generateResidual}!ford\_fulkerson.cpp@{ford\_fulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{generateResidual()}{generateResidual()}}
+{\footnotesize\ttfamily vector$<$ vector$<$ pair$<$ int, pair$<$ int, bool $>$ $>$ $>$ $>$ generate\+Residual (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ pair$<$ int, pair$<$ int, int $>$ $>$ $>$ $>$ \&}]{G }\end{DoxyParamCaption})}
+
+This function generates the residual graph from the graph G 
+\begin{DoxyParams}{Parameters}
+{\em vector$<$vector$<$pair$<$int,pair$<$int,int$>$$>$$>$$>$} & G\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ford__fulkerson_8cpp_a02bbc352243e582aa492abcf0954b3d2}\label{ford__fulkerson_8cpp_a02bbc352243e582aa492abcf0954b3d2}} 
+\index{ford\_fulkerson.cpp@{ford\_fulkerson.cpp}!increase@{increase}}
+\index{increase@{increase}!ford\_fulkerson.cpp@{ford\_fulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{increase()}{increase()}}
+{\footnotesize\ttfamily void increase (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ pair$<$ int, pair$<$ int, int $>$ $>$ $>$ $>$ \&}]{G,  }\item[{int}]{u,  }\item[{int}]{v,  }\item[{int}]{bottleneck }\end{DoxyParamCaption})}
+
+This function increases the flow in the graph G 
+\begin{DoxyParams}{Parameters}
+{\em vector$<$vector$<$pair$<$int,pair$<$int,int$>$$>$$>$$>$} & G \\
+\hline
+{\em int} & u \\
+\hline
+{\em int} & v \\
+\hline
+{\em int} & bottleneck\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ford__fulkerson_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{ford__fulkerson_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{ford\_fulkerson.cpp@{ford\_fulkerson.cpp}!main@{main}}
+\index{main@{main}!ford\_fulkerson.cpp@{ford\_fulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Main function First it takes the input from the file input.\+txt Then it calls the ford\+\_\+fulkerson function Then it prints the maximum flow \begin{DoxyReturn}{Returns}
+0 on exit
+\end{DoxyReturn}
+\mbox{\Hypertarget{ford__fulkerson_8cpp_aac3789ad6796dca42d9cadcd7de21836}\label{ford__fulkerson_8cpp_aac3789ad6796dca42d9cadcd7de21836}} 
+\index{ford\_fulkerson.cpp@{ford\_fulkerson.cpp}!normal@{normal}}
+\index{normal@{normal}!ford\_fulkerson.cpp@{ford\_fulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{normal()}{normal()}}
+{\footnotesize\ttfamily void normal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function implements the Ford Fulkerson Algorithm on a normal graph\mbox{\Hypertarget{ford__fulkerson_8cpp_aecbd9a6cd417c3993ef19fbbe4e35708}\label{ford__fulkerson_8cpp_aecbd9a6cd417c3993ef19fbbe4e35708}} 
+\index{ford\_fulkerson.cpp@{ford\_fulkerson.cpp}!print@{print}}
+\index{print@{print}!ford\_fulkerson.cpp@{ford\_fulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ pair$<$ int, pair$<$ int, int $>$ $>$ $>$ $>$ \&}]{G }\end{DoxyParamCaption})}
+
+This function prints the graph G 
+\begin{DoxyParams}{Parameters}
+{\em vector$<$vector$<$pair$<$int,pair$<$int,int$>$$>$$>$$>$} & G\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ford__fulkerson_8cpp_a43b9ac32b4f3058ace86c94f7225e7bc}\label{ford__fulkerson_8cpp_a43b9ac32b4f3058ace86c94f7225e7bc}} 
+\index{ford\_fulkerson.cpp@{ford\_fulkerson.cpp}!printResidual@{printResidual}}
+\index{printResidual@{printResidual}!ford\_fulkerson.cpp@{ford\_fulkerson.cpp}}
+\doxysubsubsection{\texorpdfstring{printResidual()}{printResidual()}}
+{\footnotesize\ttfamily void print\+Residual (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ pair$<$ int, pair$<$ int, bool $>$ $>$ $>$ $>$ \&}]{rG }\end{DoxyParamCaption})}
+
+This function prints the residual graph rG 
+\begin{DoxyParams}{Parameters}
+{\em vector$<$vector$<$pair$<$int,pair$<$int,bool$>$$>$$>$$>$} & rG\\
+\hline
+\end{DoxyParams}
